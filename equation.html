@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asgard Dao</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="favicon.png" sizes="300*300" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="container flex align-center justify-between">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-img"><img src="./img/logo.png" alt=""></div>
+                    <div class="logo-name">Asgard Dao</div>
+                </a>
+            </div>
+            <div class="links">
+                <a href="index.html">home</a>
+                <a href="Doc's.html" target="blank" class="active">doc's</a>
+                <a href="staking.html">staking</a>
+                <a href="bond.html">bond</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="https://twitter.com/asgarddao_/" target="blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://t.me/Asgard_dao" target="blank"><i class="fa fa-paper-plane"></i></a>
+                <a href="https://medium.com/@Asgard_Dao" target="blank"><i class="fa fa-medium"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <div class="content" data-aos="fade-down" data-aos-duration="1800">
+                <h3 class="heading">Equations</h3>
+                <div class="liner"></div>
+            </div>
+
+            <div class="links" data-aos="fade-down" data-aos-duration="1800">
+                <a href="codex.html">Codex</a>
+                <a href="guides.html">Guides</a>
+                <a href="dao-governance.html">DAO Governance</a>
+                <a href="token-contract.html">Contract</a>
+                <a href="road-map.html">Road Map</a>
+                <a href="glossary.html">Glossary</a>
+                <a href="equation.html" class="actived">Equations</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="equation">
+        <div class="container">
+            <div class="links flex align-center justify-between" data-aos="fade-up" data-aos-duration="1800">
+                <a href="#staking" title="Go To Staking">staking</a>
+                <a href="#bonding" title="Go To Bonding(1,1)">bonding</a>
+                <a href="#supply" title="Go To Bonding(4,4)">Asgard Supply</a>
+                <a href="#Backing" title="Go To Wrapping (Ws Asgard)">Backing per Asgard</a>
+            </div>
+
+            <div class="staking" id="staking">
+                <h3 data-aos="fade-up" data-aos-duration="1800">staking</h3>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">deposit = widthdrawal</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    Swaps between Asgard and sAsgard during staking and unstaking are always honored 1:1. The amount of
+                    Asgard deposited into the staking contract will always result in the same amount of sAsgard. And the
+                    amount of sAsgard withdrawn from the staking contract will always result in the same amount of
+                    Asgard.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">rebase = 1 -
+                    (asgardDeposits/sAsgardOutstanding)</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    The treasury deposits Asgard into the distributor. The distributor then deposits Asgard into the
+                    staking contract, creating an imbalance between Asgard and sAsgard. sAsgard is rebased to correct
+                    this imbalance between Asgard deposited and sAsgard outstanding. The rebase brings sAsgard
+                    outstanding back up to parity so that 1 sAsgard equals 1 staked Asgard.
+                </p>
+            </div>
+
+            <div class="liner"
+                style="width: 100%; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); margin: 3rem 0; border: 1px solid #31062f;">
+            </div>
+
+            <div class="bonding" id="bonding">
+                <h3 data-aos="fade-up" data-aos-duration="1800">bonding</h3>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">bondPrice = 1+Premium</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    Asgard has an intrinsic value of 1 BUSD, which is roughly equivalent to $1. In order to make a
+                    profit from bonding, Asgard charges a premium for each bond.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">Premium = debtRatio * BCV</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    The premium is derived from the debt ratio of the system and a scaling variable called BCV. BCV
+                    allows us to control the rate at which bond prices increase. <br> <br>
+                    The premium determines profit due to the protocol and in turn, stakers. This is because the new
+                    Asgard is minted from the profit and subsequently distributed among all stakers.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">debtRatio =
+                    bondsOutstanding/asgardSupply</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    The debt ratio is the total of all Asgard promised to bonders divided by the total supply of Asgard.
+                    This allows us to measure the debt of the system.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">bondPayout <span
+                        class="rrr">reverse</span>Bond = marketValue <span class="rrr">asset</span>/bondPrice
+                </div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    Bond payout determines the number of Asgard sold to a bonder. For reserve bonds, the market value of
+                    the assets supplied by the bonder is used to determine the bond payout. For example, if a user
+                    supplies 1000 BUSD and the bond price is 250 BUSD, the user will be entitled 4 Asgard.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">bondPayout <span
+                        class="rrr">lpBond</span> = marketValue <span class="rrr">lpToken</span>/bondPrice</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    For liquidity bonds, the market value of the LP tokens supplied by the bonder is used to determine
+                    the bond payout. For example, if a user supplies 0.001 Asgard-BUSD LP token which is valued at 1000
+                    BUSD at the time of bonding, and the bond price is 250 BUSD, the user will be entitled 4 Asgard.
+                </p>
+            </div>
+
+            <div class="liner"
+                style="width: 100%; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); margin: 3rem 0; border: 1px solid #31062f;">
+            </div>
+
+            <div class="supply" id="supply">
+                <h3 data-aos="fade-up" data-aos-duration="1800">ASGARD Supply</h3>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">ASGARD <span
+                        class="rrr">supplyGrowth</span> = ASGARD <span class="rrr">stakers</span> + ASGARD <span
+                        class="rrr">bonds</span> +
+                    ASGARDDao</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    <span style="color: var(--main);">Asgard supply does not have a hard cap. Its supply increases
+                        when:</span><br>
+                    <i class="fa fa-hand-o-right" style="color: #ff9900; margin-right: 1rem;"></i> Asgard is minted and
+                    distributed to the stakers. <br>
+                    <i class="fa fa-hand-o-right" style="color: #ff9900; margin-right: 1rem;"></i> Asgard is minted for
+                    the bonder. This happens whenever someone purchases a bond.<br>
+                    <i class="fa fa-hand-o-right" style="color: #ff9900; margin-right: 1rem;"></i> Asgard is minted for
+                    the DAO. This happens whenever someone purchases a bond. The DAO gets the same number of Asgard as
+                    the bonder.<br>
+                    <i class="fa fa-hand-o-right" style="color: #ff9900; margin-right: 1rem;"></i> Asgard is minted for
+                    the team or the DAO.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">ASGARD <span
+                        class="rrr">stakers</span> = ASGARD <span class="rrr">totalSupply</span> * rewardRate</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    At the end of each epoch, the treasury mints Asgard at a set reward rate. These Asgard will be
+                    distributed to all the stakers in the protocol.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">ASGARD <span
+                        class="rrr">bonds</span> = bondPayout</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    Whenever someone purchases a bond, a set number of Asgard is minted. These Asgard will not be
+                    released to the bonder all at once - they are vested to the bonder linearly over time. The bond
+                    payout uses a different formula for different types of bonds. Check the bonding section above to see
+                    how it is calculated.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">ASGARDDao = ASGARD <span
+                        class="rrr">bonders</span></div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    The DAO receives the same amount of Asgard as the bonder. This represents the DAO profit.
+                </p>
+            </div>
+
+            <div class="liner"
+                style="width: 100%; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); margin: 3rem 0; border: 1px solid #31062f;">
+            </div>
+
+            <div class="baking" id="baking">
+                <h3 data-aos="fade-up" data-aos-duration="1800">backing per asgard</h3>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">ASGARD <span
+                        class="rrr">backing</span> = treasuryBalance <span class="rrr">stablecoin</span> +
+                    treasuryBalance <span class="rrr">otherAssets</span></div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    Every Asgard in circulation is backed by the Asgard treasury. The assets in the treasury can be
+                    divided into two categories: stablecoin and non-stablecoin.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">treasuryBalance <span
+                        class="rrr">stablecoin</span> = RFV <span class="rrr">reserve</span> Bond + RFV <span
+                        class="rrr">lpBond</span>
+                </div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    The stablecoin balance in the treasury grows when bonds are sold. RFV is calculated differently for
+                    different bond types
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">RFV <span
+                        class="rrr">reserve</span> Bond = assetSupplied</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    For reserve bonds such as BUSD bond, the RFV simply equals to the amount of the underlying asset
+                    supplied by the bonder.
+                </p>
+                <div data-aos="fade-up" data-aos-duration="1800" style="font-style: italic; margin: 1rem 0; letter-spacing: 1px;">RFV<span class="rrr">lpBond</span>
+                    = 2sqrt(contantProduct) * (% ownership of the
+                    pool)</div>
+                <p data-aos="fade-up" data-aos-duration="1800">
+                    For LP bonds such as Asgard-BUSD bond, the RFV is calculated differently because the protocol needs
+                    to mark down its value. Why? The LP token pair consists of Asgard, and each Asgard in circulation
+                    will be backed by these LP tokens - there is a cyclical dependency. To safely guarantee all
+                    circulating Asgard are backed, the protocol marks down the value of these LP tokens, hence the name
+                    risk-free value (RFV).
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="wrapper">
+                <div class="wrap" data-aos="fade-up" data-aos-duration="1800">
+                    <h3>documentation</h3>
+                    <div class="links">
+                        <a href="codex.html">Codex</a>
+                        <a href="guides.html">Guides</a>
+                        <a href="dao-governance.html">DAO Governance</a>
+                        <a href="token-contract.html">Contract</a>
+                        <a href="road-map.html">Road-Map</a>
+                        <a href="glossary.html">Glossary</a>
+                        <a href="equation.html">Equations</a>
+                    </div>
+                </div>
+
+                <div class="wrap" data-aos="fade-up" data-aos-duration="1800">
+                    <h3>our links</h3>
+                    <div class="links">
+                        <a href="index.html"">home</a>
+                        <a href=" Doc's.html">doc's</a>
+                        <a href="staking.html">staking</a>
+                        <a href="bond.html">bond</a>
+                        <a href="FAQ.html">FAQ</a>
+                    </div>
+                </div>
+
+                <div class="wrap" data-aos="fade-up" data-aos-duration="1800">
+                    <h3>reference</h3>
+                    <div class="links">
+                        <a href="https://asgarddao.live/">website</a>
+                        <a href="https://twitter.com/Asgarddao_">twitter</a>
+                        <a href="https://t.me/Asgard_dao">telegram</a>
+                        <a href="https://discord.com/invite/gXevKQJTAx">discord</a>
+                        <a href="https://medium.com/@Asgard_Dao">medium</a>
+                    </div>
+                </div>
+
+                <div class="wrap" data-aos="fade-up" data-aos-duration="1800">
+                    <h3>social links</h3>
+                    <div class="links">
+                        <a href="https://twitter.com/asgarddao_/" target="blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://t.me/Asgard_dao" target="blank"><i class="fa fa-paper-plane"></i></a>
+                        <a href="https://medium.com/@Asgard_Dao" target="blank"><i class="fa fa-medium"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- counter -->
+    <script src="./js/jquery.counterup.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        });
+    </script>
+
+    <!-- animation scroll behavior -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
